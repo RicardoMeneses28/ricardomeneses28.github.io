@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Saludo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      html {font-family: sans-serif; text-align: center}
+      body {display: inline-block; text-align: left}
+      output {font-weight: bold}
+      footer {font-size: small}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Formulario</h1>
+    </header>
+    <section>
+        <form id="forma" action="javascript:saluda()">
+        <p>
+          <label accesskey="1">
+            Boleta
+            <input name="boleta" type="text">
+          </label>
+        </p>
+         <p>
+          <label accesskey="2">
+            Nombre
+            <input name="nombre" type="text">
+          </label>
+         </p>
+          <p>
+           <label accesskey="3">
+            Grupo
+            <input name="grupo" type="text">
+           </label>
+          </p>
+          <p>
+             <label accesskey="4">
+            Materia
+            <input name="materia" type="text">
+          </label>
+          </p>
+          <p>
+             <label accesskey="5">
+            Fecha
+            <input name="fecha" type="date">
+          </label>
+             
+        </p>
+        <p>
+                <br><input type="submit" value="Calcular" >
+            </p>
+        <p><output id="salida"></output></p>
+      </form>
+    </section>
+    <footer>
+      Copyright 2021 Yo
+    </footer>
+    <script src="js/CtrlSaludo1.js"></script>
+  </body>
+</html>
