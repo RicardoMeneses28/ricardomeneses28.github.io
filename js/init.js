@@ -11,8 +11,6 @@ firebase.initializeApp({
     measurementId: "G-EQNMZEWXB9"
    
   }
-        firebase.initializeApp(firebaseConfig);
-  firebase.analytics();                
-                      
+ 
      );
 
