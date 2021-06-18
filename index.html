@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>PORCENTAJE DE GRASA CORPORAL</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/libs/bignumber.js/bignumber.min.js"></script>
+        <script src="js/libs/numeral.js/numeral.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+         <script src="js/init.js"> </script>
+
+    </head>
+    <body>
+        <header>
+        <h3>Calculadora de porcentaje corporal</h3>
+        </header>
+        <p> 
+            En la perdida de peso, la grasa corporal juega un papel muy importante, pues esta define nuestros objetivos.
+        </p>
+        <form id="forma" action="javascript:procesa()">
+        <p><em>El borde azul indica obligatorio</em></p> 
+        <p>
+                <label acceskey="O1">
+                    Estatura<br>
+                    <input name="estatura" type="text" class="numero"  required pattern="[0-9,]+{.}\d{1}" placeholder="en centimetros"
+                           maxlength="11" size="13">
+                    
+                </label>
+                <br><output id="salidaOp1"></output>
+            </p>
+            <p>
+                <label acceskey="O2">
+                    Peso(kg)<br>
+                    <input name="peso" type="text" class="numero"  required pattern="[0-9,]+{.}\d{1}"  placeholder="en kilogramos"
+                           maxlength="11" size="13" >
+                    
+                </label>
+                <br><output id="salidaOp2"></output>
+            </p>
+             <p>
+                <label acceskey="O3">
+                    Circunferencia cintura<br>
+                    <input name="cintura" type="text" class="numero" required pattern="[0-9,]+{.}\d{1}" placeholder="en centimetros"
+                           maxlength="11" size="13" >
+                    
+                </label>
+                <br><output id="salidaOp3"></output>
+            </p>
+            
+            <p>
+                
+                <label acceskey="05">
+                    Edad <br><input name="edad" type="text" class="numero" required pattern="[0-9,]+{.}\d{1}"  maxlength="11" size="13"></label>
+                    <br><output id="salidaOp5"></output> 
+            </p>
+            
+           
+            <p>
+                <br><input type="submit" value="Calcular" acceskey="C">
+            </p>
+             <p>
+                <label acceskey="S">
+                    INDICE DE MASA CORPORAL: 
+                </label>
+                <output id="salidaIMC"></output>
+            </p>
+            <p>
+                <label acceskey="R">
+                    PORCENTAJE DE GRASA CORPORAL: 
+                </label>
+                <output id="salidaGrasa"></output>
+            </p>
+            <p>
+                <label acceskey="M">
+                    CALORIAS DIARIAS: 
+                </label>
+                <output id="salidaCalorias"></output>
+            </p>
+            <img src="grasa.png" style="width: 800px; height:400px">
+                
+        </form>
+        <footer>
+        Copyrigth 2021 Meneses Jimenez Ricardo
+        </footer>
+         <script src="js/CtrlManejoNum.js"></script>
+         <script>
+            //@ts-check
+            /** Conexión al sistema de autenticación de Firebase. */
+            // @ts-ignore
+            const auth = firebase.auth();
+            /** Tipo de autenticación de usuarios. En este caso es con Google. */
+            // @ts-ignore
+            const provider = new firebase.auth.GoogleAuthProvider();
+            /* Configura el proveedor de Google para que permita seleccionar de una
+             * lista. */
+            provider.setCustomParameters({ prompt: "select_account" });
+            /* Recibe una función que se invoca cada que hay un cambio en la
+             * autenticación y recibe el modelo con las características del usuario.*/
+            auth.onAuthStateChanged(
+              /** Recibe las características del usuario o null si no ha iniciado
+               * sesión. */
+              usuarioAuth => {
+                if (usuarioAuth && usuarioAuth.email) {
+                  // Usuario aceptado.
+                  // @ts-ignore Muestra el email registrado en Google.
+                  email.value = usuarioAuth.email;
+                  // @ts-ignore Muestra el nombre registrado en Google.
+                  nombre.value = usuarioAuth.displayName;
+                  // @ts-ignore Muestra el avatar registrado en Google.
+                  avatar.src = usuarioAuth.photoURL;
+                } else {
+                  // No ha iniciado sesión. Pide datos para iniciar sesión.
+                  auth.signInWithRedirect(provider); 
+                }
+              },
+              // Función que se invoca si hay un error al verificar el usuario. //
+              procesaError
+            );
+            /** Termina la sesión. */
+            async function terminaSesión() {
+              try {
+                await auth.signOut();
+              } catch (e) {
+                procesaError(e);
+              }
+            }
+            /** Procesa un error. Muestra el objeto en la consola y un cuadro de
+             * alerta con el mensaje.
+             * @param {Error} e descripción del error. */
+            function procesaError(e) {
+              console.log(e);
+              alert(e.message);
+            }
+          </script>
+    </body>
+</html>
