@@ -42,7 +42,15 @@ class MiNav extends HTMLElement {
           `<li>
             <a href=
               "chat.html">Chat</a>
-          </li>`;
+          </li>`
+                  `<li>
+            <a href=
+"calculadora.html">Calculadora</a>
+          </li>
+        
+        
+        
+        ;
       }
       /* Enlaces para solo
        * administradores.
@@ -50,10 +58,7 @@ class MiNav extends HTMLElement {
       if (roles.has(
         "Administrador")) {
         html += /* html */
-          `<li>
-            <a href=
-"calculadora.html">Calculadora</a>
-          </li>
+
           <li>
             <a href=
       "usuarios.html">Clientes</a>
