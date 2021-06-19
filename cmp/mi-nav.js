@@ -39,10 +39,10 @@ class MiNav extends HTMLElement {
        * para clientes. */
       if (roles.has("Cliente")) {
         html += /* html */
-          `<li>
+          <li>
             <a href=
               "chat.html">Chat</a>
-          </li>`
+          </li>
                   
         
         
@@ -55,7 +55,7 @@ class MiNav extends HTMLElement {
       if (roles.has(
         "Administrador")) {
         html += /* html */
-          `<li>
+          <li>
             <a href=
 "calculadora.html">Calculadora</a>
           </li>
