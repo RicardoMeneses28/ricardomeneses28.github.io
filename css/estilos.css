@@ -23,7 +23,7 @@ header {
     var(--color-header);
 }
 *:required, .obligatorio {border: thin solid blue}
-input [type=number], .numero {text-align: right}
+input [type=number], .numero {text-align: left}
 
 .herramientas {
   display: flex;
