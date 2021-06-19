@@ -14,7 +14,7 @@ class MiNav extends HTMLElement {
       `<ul>
         <li>
           <a href="index.html">
-            Sesión</a>
+            SESION</a>
         </li>
       </ul>`;
     this.ul =
@@ -41,7 +41,7 @@ class MiNav extends HTMLElement {
         html += /* html */
           `<li>
             <a href=
-              "chat.html">Chat</a>
+              "chat.html">CHAT</a>
           </li>`;
       }
       /* Enlaces para solo
