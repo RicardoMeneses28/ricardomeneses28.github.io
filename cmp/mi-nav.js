@@ -1,4 +1,4 @@
-mport {
+import {
   cargaRoles
 } from "../js/seguridad.js";
 import {
