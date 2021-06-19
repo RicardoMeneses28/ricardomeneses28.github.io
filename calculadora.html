@@ -1,18 +1,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.2, " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, " >
     <title>CALCULADORA DE GRASA CORPORAL</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/libs/bignumber.js/bignumber.min.js"></script>
         <script src="js/libs/numeral.js/numeral.min.js"></script>
+    <script
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.5.0/firebase-storage.js">
     <script type="module"
-    src="cmp/mi-nav.js">
+    src="cmp/mi-nav.js"> </script>
+    <script type="module"
+    src="cmp/mi-footer.js">
+    </script>
+  <script type="module"
+    src="cmp/mi-progreso.js">
     </script>
   </head>
   <body>
     <mi-nav></mi-nav>
     <h3>Calculadora de porcentaje de grasa corporal</h3>
+     <mi-progreso>
+          </mi-progreso>
       <p> 
             En la perdida de peso, la grasa corporal juega un papel muy importante, pues esta define nuestros objetivos.
         </p>
@@ -81,6 +99,6 @@
     <script src="js/CtrlManejoNum.js"></script>
     
     
-    <footer>Copyright &copy; 2021 Ricardo Meneses Jimenez.</footer>
+  <mi-footer></mi-footer>
   </body>
 </html>
