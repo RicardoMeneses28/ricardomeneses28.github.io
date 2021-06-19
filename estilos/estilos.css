@@ -1,59 +1,7 @@
-:root {
-  font-family: sans-serif;
-  --col-active: #4646462c;
-  --color-header: white;
-  --colorMiNav: white;
-}
+html {font-family: sans-serif; text-align: center}
+body {display: inline-block; text-align: center}
+label,legend {font-weight: bold}
+*:required, .obligatorio {border: thin solid blue}
+input [type=number], .numero {text-align: right}
+br + output, footer, form em {font-size: smaller}
 
-body {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0.5rem;
-  text-align: center
-}
-
-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color:
-    var(--color-header);
-}
-
-.herramientas {
-  display: flex;
-  flex-flow: wrap;
-  align-items: center;
-  align-content: flex-end;
-  justify-content: flex-end;
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  gap: 0.5rem;
-}
-
-header input {
-  flex-grow: 1;
-}
-
-h1 {
-  margin: 0.5rem 0;
-}
-
-figure img {
-  max-width: 100%;
-}
-
-legend,
-p label {
-  display: block;
-  font-weight: bold;
-  font-size: 0.7rem;
-}
-
-p label>* {
-  display: block;
-  font-weight: normal;
-  font-size: 1rem;
-  box-sizing: border-box;
-  width: 100%;
-}
