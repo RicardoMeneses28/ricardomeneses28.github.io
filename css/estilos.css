@@ -22,6 +22,8 @@ header {
   background-color:
     var(--color-header);
 }
+*:required, .obligatorio {border: thin solid blue}
+input [type=number], .numero {text-align: right}
 
 .herramientas {
   display: flex;
