@@ -1,3 +1,16 @@
+import {
+  cargaRoles
+} from "../js/seguridad.js";
+import {
+  getAuth
+} from "../lib/fabrica.js";
+import {
+  muestraError
+} from "../lib/util.js";
+
+
+
+
 class MiNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /* html */
