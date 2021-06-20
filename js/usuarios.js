@@ -19,8 +19,6 @@ const SIN_PASATIEMPO = /* html */
 const firestore = getFirestore();
 const daoRol = firestore.
   collection("Rol");
-const daoPasatiempo = firestore.
-  collection("Registro");
 const daoUsuario = firestore.
   collection("Usuario");
 
@@ -147,16 +145,12 @@ export async function
     id) {
   try {
     evt.preventDefault();
-    const pasatiempoId =
-      getForánea(formData,
-        "Clientes");
     const rolIds =
       formData.getAll("rolIds");
     await daoUsuario.
       doc(id).
       set({
-        Clientes,
-        rolIds
+      rolIds
       });
     const avatar =
       formData.get("avatar");
