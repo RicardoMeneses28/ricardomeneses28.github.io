@@ -13,14 +13,14 @@ import {
 
 const SIN_PASATIEMPO = /* html */
   `<option value="">
-    -- Sin Pasatiempo --
+    -- Sin Registro --
   </option>`;
 
 const firestore = getFirestore();
 const daoRol = firestore.
   collection("Rol");
 const daoPasatiempo = firestore.
-  collection("Pasatiempo");
+  collection("Registro");
 const daoUsuario = firestore.
   collection("Usuario");
 
@@ -149,13 +149,13 @@ export async function
     evt.preventDefault();
     const pasatiempoId =
       getForánea(formData,
-        "pasatiempoId");
+        "Clientes");
     const rolIds =
       formData.getAll("rolIds");
     await daoUsuario.
       doc(id).
       set({
-        pasatiempoId,
+        Clientes,
         rolIds
       });
     const avatar =
