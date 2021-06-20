@@ -24,19 +24,14 @@ class MiNav extends HTMLElement {
         cambiaUsuario(usuario),
       muestraError);
   }
-
-  /**
-   * @param {import(
-      "../lib/tiposFire.js").User}
-      usu */
+  
   async cambiaUsuario(usu) {
     if (usu && usu.email) {
       let html = "";
       const roles =
         await cargaRoles(
           usu.email);
-      /* Enlaces para solo
-       * para clientes. */
+    
       if (roles.has("Cliente")) {
         html += /* html */
           `<li>
@@ -47,13 +42,9 @@ class MiNav extends HTMLElement {
             <a href=
 "calculadora.html">CALCULADORA</a>
           </li>
-          
-          
           `;
       }
-      /* Enlaces para solo
-       * administradores.
-       */
+     
       if (roles.has(
         "Administrador")) {
         html += /* html */
