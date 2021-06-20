@@ -20,7 +20,7 @@ const firestore = getFirestore();
 const daoRol = firestore.
   collection("Rol");
 const daoPasatiempo = firestore.
-  collection("Pasatiempo");
+  collection("Registro");
 const daoUsuario = firestore.
   collection("Usuario");
 
@@ -63,7 +63,7 @@ async function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay usuarios
+        -- No hay clientes
         registrados. --
       </li>`;
   }
