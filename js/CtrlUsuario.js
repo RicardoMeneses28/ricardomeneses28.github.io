@@ -28,6 +28,7 @@ const id = params.get("id");
 const IMC= params.get("IMC");
 const grasa= params.get("grasa");
 const fecha= params.get("fecha");
+const edad= params.get("fecha");
 
 const daoUsuario = getFirestore().
   collection("Usuario");
