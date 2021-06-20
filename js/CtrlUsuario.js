@@ -25,6 +25,10 @@ const params =
   new URL(location.href).
     searchParams;
 const id = params.get("id");
+const IMC= params.get("IMC");
+const grasa= params.get("grasa");
+const fecha= params.get("fecha");
+
 const daoUsuario = getFirestore().
   collection("Usuario");
 /** @type {HTMLFormElement} */
@@ -55,6 +59,9 @@ async function busca() {
     if (doc.exists) {
       const data = doc.data();
       forma.cue.value = id || "";
+      forma.grasa.value= grasa || "";
+      forma.IMC.value= IMC || "";
+      forma.edad.value= EDAD || "";
       img.src =
         await urlStorage(id);
       selectPasatiempos(
