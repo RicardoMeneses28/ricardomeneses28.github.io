@@ -62,7 +62,7 @@ async function busca() {
       forma.cue.value = id || "";
       forma.grasa.value= grasa || "";
       forma.IMC.value= IMC || "";
-      forma.edad.value= EDAD || "";
+      forma.edad.value= edad || "";
       img.src =
         await urlStorage(id);
       selectPasatiempos(
