@@ -43,6 +43,10 @@ async function guarda(evt) {
     new FormData(forma);
   const id = getString(
     formData, "cue").trim();
+  const imc = getString(
+    formData, "imc").trim();
+  const grasa = getString(
+    formData, "grasa").trim();
   await guardaUsuario(evt,
     formData, id);
 }
